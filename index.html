@@ -18,33 +18,33 @@
 <body style="margin : 0px; overflow: hidden;">
    <script>
       AFRAME.registerComponent("registerevents", {
-            init: function() {
-              var marker = this.el;
+//             init: function() {
+//               var marker = this.el;
       
-              marker.addEventListener("markerFound", function() {
-                var markerId = marker.id;
-                console.log("markerFound", markerId);
-                if ((markerId = "marker_freeka")) {
-                  freeka.play();
-                }
+//               marker.addEventListener("markerFound", function() {
+//                 var markerId = marker.id;
+//                 console.log("markerFound", markerId);
+//                 if ((markerId = "marker_freeka")) {
+//                   freeka.play();
+//                 }
       
-                if ((markerId = "marker_musk")) {
-                  musk.play();
-                }
-              });
+//                 if ((markerId = "marker_musk")) {
+//                   musk.play();
+//                 }
+//               });
       
-              marker.addEventListener("markerLost", function() {
-                var markerId = marker.id;
-                console.log("markerLost", markerId);
-                if ((markerId = "marker_freeka")) {
-                  freeka.pause();
-                }
+//               marker.addEventListener("markerLost", function() {
+//                 var markerId = marker.id;
+//                 console.log("markerLost", markerId);
+//                 if ((markerId = "marker_freeka")) {
+//                   freeka.pause();
+//                 }
       
-                if ((markerId = "marker_musk")) {
-                  musk.pause();
-                }
-              });
-            }
+//                 if ((markerId = "marker_musk")) {
+//                   musk.pause();
+//                 }
+//               });
+//             }
       });
    </script>
 
