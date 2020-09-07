@@ -15,9 +15,9 @@
    left: 0;
    }
 </style>
-<body style="margin : 0px; overflow: hidden;">
-   <script>
-      AFRAME.registerComponent("registerevents", {
+<body style="margin : 0px; overflow: hidden; position: absolute;">
+   <!-- <script> -->
+      // AFRAME.registerComponent("registerevents", {
 //             init: function() {
 //               var marker = this.el;
       
@@ -45,8 +45,8 @@
 //                 }
 //               });
 //             }
-      });
-   </script>
+      // });
+   <!-- </script> -->
 
 
    <div class="overlay">
@@ -55,42 +55,15 @@
       </button>
    </div>
    <a-scene embedded arjs="debugUIEnabled: false; sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;" vr-mode-ui="enabled: false">
-      <a-assets>
-         <!-- Load video that is hosted on another server. See 'src' attribute: -->
-         <video
-            id="freeka"
-            autoplay="true"
-            loop="true"
-            src="videos/freeka.mp4"
-            ></video>
-         <video
-            id="musk"
-            autoplay="true"
-            loop="true"
-            src="videos/frame-garbage.mp4"
-            ></video>
-      </a-assets>
-      <!--     <a-marker preset="pattern" type="pattern" url="https://cdn.glitch.com/a36300fc-552c-4d35-bb4f-554caf2062ea%2Fpattern-marker-ual.patt?1523138934861"> -->
-      <a-marker
-         type="pattern"
-         id="marker_freeka"
-         url="patterns/pattern-Screen%20Shot%202020-09-03%20at%202.52.45%20PM.patt"
-         registerevents
-         >
-         <a-entity scale="1 1 1" rotation="-90 0 0">
-            <a-video play-on-scan src="#freeka"></a-video>
-         </a-entity>
+
+      <a-marker type="pattern" id="marker_freeka" url="patterns/pattern-Screen%20Shot%202020-09-03%20at%202.52.45%20PM.patt">
+         <a-video  id="freeka" autoplay="true" loop="true" src="videos/freeka.mp4" scale="1 1 1" rotation="-90 0 0"></a-video>
       </a-marker>
-      <a-marker
-         type="pattern"
-         id="marker_musk"
-         url="patterns/pattern-musk.patt"
-         registerevents
-         >
-         <a-entity scale="1 1 1" rotation="-90 0 0">
-            <a-video play-on-scan src="#musk"></a-video>
-         </a-entity>
+
+      <a-marker type="pattern" id="marker_musk" url="patterns/pattern-musk.patt" >
+         <a-video  id="musk" autoplay="true" loop="true" src="videos/frame-garbage.mp4" scale="1 1 1" rotation="-90 0 0"></a-video>
       </a-marker>
+
       <a-entity camera></a-entity>
    </a-scene>
    <script>
